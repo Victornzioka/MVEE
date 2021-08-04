@@ -1,0 +1,12 @@
+{% extends "store/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<button type="submit" class="btn btn-success">Submit</button>
+	<a href="{% url 'store' %}" class="btn btn-success">Go Back</a>
+    </form>
+{% endblock %}
