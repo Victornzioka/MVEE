@@ -1,9 +1,9 @@
 {% extends 'store/base.html' %}
-{% load static %}
+<!-- {% load static %} -->
 
 
 {% block content %}
-	<div class="detail">
+	<!-- <div class="detail mt-4">
 		<div class="detail-element">
 			<img class="thumbnail" src="{{detail.imageURL}}"><br>
 		</div>
@@ -17,5 +17,47 @@
 			<h4><strong>${{detail.price}}</strong></h4>
 
 		</div>
+	</div> -->
+
+
+	<div id="content-wrapper">
+		<div class="column">
+			<img id="featured" src="{{detail.imageURL}}">
+
+			<div id="slide-wrapper">
+				<img id="slideLeft" class="arrow" src="{% static 'images/arrow-left.png' %}">
+
+				<div id="slider">
+					{% for image in detail.image_set.all%}
+
+				
+						<img class="thumbnail-detail" src="{{image.imageURL}}">
+
+					{% endfor %}
+			
+				</div>
+
+				<img id="slideRight" class="arrow" src="{% static 'images/arrow-right.png' %}">
+			</div>
+		</div>
+
+		<div class="column">
+			<h1>{{detail.name}}</h1>
+			<hr>
+			<h3>${{detail.price}}</h3>
+			<hr>
+
+			<p>{{detail.description}}</p>
+			<hr>
+
+			<!-- <input value=1 type="number"> -->
+			<div style="display: inline-block;">
+				<button data-product={{detail.id}} data-action = 'add' class="btn btn-dark update-cart">Add to Cart</button>
+				<a href="{% url 'store' %}" class="btn btn-dark">Go Back</a>
+			</div>
+			
+
+		</div>
 	</div>
+
 {% endblock %}

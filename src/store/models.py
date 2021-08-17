@@ -26,7 +26,7 @@ class Product(models.Model):
 	name = models.CharField(max_length=100)
 	price = models.DecimalField(decimal_places=2, max_digits=9)
 	description = models.TextField(null=True, blank=True)
-	image = models.ImageField(null=True, blank=True)
+	featured = models.ImageField(null=True, blank=True)
 	
 	def __str__(self):
 		return self.name
@@ -34,11 +34,29 @@ class Product(models.Model):
 	@property
 	def imageURL(self):
 		try:
-			url = self.image.url
+			url = self.featured.url
 		except Exception as e:
 			url = ''
 		return url
-	
+
+
+class Image(models.Model):
+	product = models.ForeignKey(Product, on_delete=models.CASCADE)
+	name = models.CharField(max_length=200)
+	image = models.ImageField()
+
+	def __str__(self):
+		return self.name
+
+	@property
+	def imageURL(self):
+		try:
+			url = self.image.url
+		except:
+			url = ''
+		print('URL:', url)
+		return url
+
 
 class Order(models.Model):
 	customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)

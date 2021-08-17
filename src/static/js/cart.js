@@ -38,3 +38,35 @@ function UpdateUserOrder(productId, action){
 		location.reload()
 	})
 }
+
+
+// js code to work on the image slider in the detail page
+	let thumbnails = document.getElementsByClassName('thumbnail-detail')
+	let activeImages = document.getElementsByClassName('active')
+	for (var i=0; i < thumbnails.length; i++){
+		thumbnails[i].addEventListener('click', function(){
+
+			if (activeImages.length > 0){
+				activeImages[0].classList.remove('active')
+			}
+		
+			this.classList.add('active')
+			document.getElementById('featured').src = this.src
+		})
+
+
+	}
+
+	const buttonRight = document.getElementById('slideRight');
+	const buttonLeft = document.getElementById('slideLeft');
+
+
+	buttonRight.addEventListener('click', function(){
+		document.getElementById('slider').scrollLeft += 180;
+	})
+
+
+
+	buttonLeft.addEventListener('click', function(){
+	  document.getElementById('slider').scrollLeft -= 180;
+	})
