@@ -9,7 +9,7 @@ from .models import *
 from .utils import cartData
 
 # Create your views here.
-def home(request):
+def store(request):
 	products = Product.objects.all()
 	
 	data = cartData(request)
@@ -89,3 +89,20 @@ def processOrder(request):
 	else:
 		print('user is not logged in...')
 	return JsonResponse('Payment complete...', safe=False)
+
+
+def about(request):
+	return render(request, 'store/about.html')
+
+def home(request):
+	return render(request, 'store/home.html')
+
+#The view for the other products other than house plans
+def store2(request):
+	products = OtherProducts.objects.all()
+	
+	data = cartData(request)
+	cartItems = data['cartItems']
+
+	context = {'products':products, 'cartItems':cartItems}
+	return render(request, 'store/otherproducts.html', context)

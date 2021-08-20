@@ -180,11 +180,11 @@ ul, ol {
     opacity: 1;
 }
 
-#slide-wrapper{
+/* #slide-wrapper{
     max-width: 500px;
     display: flex;
     min-height: 100px;
-    align-items: center;
+    align-items: center; */
 }
 
 #slider{
@@ -194,12 +194,6 @@ ul, ol {
     overflow-x: hidden;
 }
 
-#slider{
-    width: 440px;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-}
 
 #slider::-webkit-scrollbar {
     width: 8px;
@@ -234,3 +228,28 @@ ul, ol {
     width: 35px;
     height: 35px;
 }
+
+
+.lipanampesatag{
+    height: 40px;
+    width: 200px;
+}
+
+/* css for homeboxes */
+.homebox{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.partition{
+    width: 1000px;
+    padding-right: 5px;
+}
+
+.homeplanbuttons{
+    width: 150px;
+    height: 100px;
+}
+

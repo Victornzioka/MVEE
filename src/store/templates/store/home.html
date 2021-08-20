@@ -1,0 +1,39 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="box-element mt-4">
+        <h2>Welcome to MVEE. We value our clients 
+            and serve them with diligence.
+        </h2>
+    </div>
+
+    <h3 style="text-align: center; margin-top: 10px;"><u>Services we offer</u></h3>
+
+    <div class="homebox">
+        <div class="partition box-element">
+            <div class="box-element">
+                <p>Want to build a house and do not have a plan? Here are some awesome ready house plans you can check.</p>
+                <a href="{% url 'store' %}"><img class="homeplanbuttons" src="{% static 'images/readyhouseplan.jpeg' %}" alt=""> Get a ready house plan</a>
+            </div>
+
+            <div class="box-element">
+                <p>Are you an architect and have designed a plan that you wish to market? Submit it here and we will help you sell it.</p>
+                <a href="{% url 'sellplan' %}"><img class="homeplanbuttons" src="{% static 'images/sellhouse.jpeg' %}" alt=""> Sell house plan</a>
+            </div>
+
+            <div class="box-element">
+                <p>Do you have specifications on how your house should look like? Hire an architect from our our team and get your desired design fast</p>
+                <a href="{% url 'hire' %}"><img class="homeplanbuttons" src="{% static 'images/hirearchitect.jpeg' %}" alt=""> Hire an Architect</a>
+            </div>
+        </div>
+        <div class="partition box-element">
+            <!-- <p>
+                We offer other products too. We sell laptops, office accessories and many other produts that you might like.
+                Be sure to check what we have in our store that might interest you using the link below.
+            </p>
+            <a href="{% url 'other_products' %}"><img class="homeplanbuttons" src="{% static 'images/products.jpeg' %}" alt=""> Check other products</a> -->
+
+        </div>
+    </div>
+{% endblock %}
