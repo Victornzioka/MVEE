@@ -4,3 +4,4 @@ from .models import *
 # Register your models here.
 admin.site.register(HousePlan)
 admin.site.register(HireArchitect)
+admin.site.register(PhoneNumber)

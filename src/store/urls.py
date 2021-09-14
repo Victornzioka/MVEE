@@ -12,4 +12,8 @@ urlpatterns = [
 	path('process_order/', views.processOrder, name='process_order'),
 	path('about/', views.about, name='about'),
 	path('products/', views.store2, name='other_products'),
+
+	#mpesa api urls
+	path('access/token/', views.getAccessToken, name='get_mpesa_access_token'),
+	path('online/lipa', views.lipa_na_mpesa_online, name='lipa_na_mpesa'),
 ]

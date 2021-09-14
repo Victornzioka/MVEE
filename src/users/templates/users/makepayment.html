@@ -1,0 +1,6 @@
+{% extends "store/base.html" %}
+
+{% block content %}
+    {{ phone_number }}
+    <a class="btn btn-success mt-4 mb-4" href="{% url 'lipa_na_mpesa' %}">Make Payment</a>
+{% endblock %}

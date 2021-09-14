@@ -19,3 +19,14 @@ class HireArchitect(models.Model):
 
 	def __str__(self):
 		return self.PlanName
+
+class PhoneNumber(models.Model):
+	phone_number = models.IntegerField(null=True, blank=True)
+
+	def __str__(self):
+		return str(self.phone_number)
+
+	@property
+	def phone(self):
+		no = self.phone_number
+		return no
