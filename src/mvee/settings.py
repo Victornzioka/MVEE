@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f#a8j(=ef7$hb@2ijb_o6x!dgw_fbv(32*39rvdk+l0z%g%%w9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'c6e2-102-222-145-173.ngrok.io']
+ALLOWED_HOSTS = ['localhost', 'ecommerce-site-dn8l.onrender.com']
 
 
 # Application definition
